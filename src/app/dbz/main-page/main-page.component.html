@@ -1,0 +1,13 @@
+<h1>Dragon Ball Z</h1>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-personajes [data]="personajes" ></app-personajes><!-- adta solo son los datos mas no el elemento html, dta* puede tenrr cualkier nombre que coninsida en el input del .ts-->
+    </div>
+    <div class="col">
+       <app-agregar 
+        [personajes]="personajes"
+        [nuevo]="nuevo"
+       ></app-agregar>
+    </div>
+</div>
