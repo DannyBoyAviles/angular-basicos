@@ -1,6 +1,7 @@
 import { EventEmitter } from '@angular/core';
 import { Component, Input, Output } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-agregar',
@@ -15,15 +16,21 @@ export class AgregarComponent{
     poder : 0
   }
 
+  constructor(private DbzService: DbzService  ){}
+
   //emintir un tipo de dao generico
-  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+  // @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+
+
   
   // agregar( event: any ){
   agregar(  ){
     if (this.nuevo.nombre.trim().length === 0) { return;}//salte de este metodo (validaciones automaticas)
     
     // console.log(this.nuevo);        
-    this.onNuevoPersonaje.emit( this.nuevo );
+    // this.onNuevoPersonaje.emit( this.nuevo );
+
+    this.DbzService.agregarPersonaje(this.nuevo);
     
     this.nuevo = {
       nombre: '',

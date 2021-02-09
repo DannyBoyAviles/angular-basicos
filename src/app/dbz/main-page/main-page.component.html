@@ -2,12 +2,9 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-personajes [data]="personajes" ></app-personajes><!-- adta solo son los datos mas no el elemento html, dta* puede tenrr cualkier nombre que coninsida en el input del .ts-->
+        <app-personajes></app-personajes><!-- adta solo son los datos mas no el elemento html, dta* puede tenrr cualkier nombre que coninsida en el input del .ts-->
     </div>
     <div class="col">
-       <app-agregar 
-        [nuevo]="nuevo"
-        (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"
-       ></app-agregar>
+       <app-agregar [nuevo]="nuevo"></app-agregar>
     </div>
 </div>
